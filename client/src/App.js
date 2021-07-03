@@ -3,6 +3,8 @@ import {ApolloProvider, ApolloClient, InMemoryCache} from "@apollo/client";
 import logo from './logo.png'
 import React from "react";
 import Launches from "./components/Launches";
+import {Switch, Route} from 'react-router-dom';
+import Launch from "./components/Launch";
 
 
 function App() {
@@ -15,7 +17,14 @@ function App() {
   return (
           <ApolloProvider client={client}>
               <div className="container">
-                  <Launches/>
+                  <Switch>
+                      <Route path='/' exact>
+                          <Launches/>
+                      </Route>
+                      <Route path='/launch/:flight_number' exact>
+                        <Launch />
+                      </Route>
+                  </Switch>
               </div>
           </ApolloProvider>
   );
