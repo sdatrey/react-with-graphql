@@ -2,7 +2,6 @@ import React from "react";
 import { gql, useQuery } from '@apollo/client';
 import logo from "../logo.png";
 import LaunchItem from "./LaunchItem";
-import Launch from "./Launch";
 
 const LAUNCHES_QUERY = gql`
     query LaunchesQuery {
@@ -48,5 +47,5 @@ const Launches = () => {
                 }
             </div>
     )
-}
+};
 export default Launches;
